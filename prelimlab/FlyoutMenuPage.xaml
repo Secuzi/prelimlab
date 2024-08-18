@@ -7,13 +7,21 @@
     xmlns:views="clr-namespace:prelimlab.Views"
     Title="FlyoutMenuPage">
     <VerticalStackLayout>
-        <CollectionView>
+        <CollectionView
+            x:Name="clFlyout"
+            x:FieldModifier="public"
+            SelectionChanged="clFlyout_SelectionChanged"
+            SelectionMode="Single">
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:FlyOutItemPage}">
                     <model:FlyOutItemPage
                         Title="Home"
                         IconSource="Icons/home_icon.svg"
                         TargetPage="{x:Type views:QtOfTheDayPage}" />
+                    <model:FlyOutItemPage
+                        Title="Gallery"
+                        IconSource="Icons/gallery.svg"
+                        TargetPage="{x:Type views:GalleryPage}" />
 
                 </x:Array>
             </CollectionView.ItemsSource>
