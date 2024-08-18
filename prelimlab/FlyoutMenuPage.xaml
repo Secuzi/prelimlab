@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="prelimlab.FlyoutMenuPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:prelimlab.Models"
+    xmlns:views="clr-namespace:prelimlab.Views"
+    Title="FlyoutMenuPage">
+    <VerticalStackLayout>
+        <CollectionView>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type model:FlyOutItemPage}">
+                    <model:FlyOutItemPage
+                        Title="Home"
+                        IconSource="Icons/home_icon.svg"
+                        TargetPage="{x:Type views:QtOfTheDayPage}" />
+
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+
+                        <VerticalStackLayout
+                            Grid.Row="1"
+                            Padding="8,0,8,0"
+                            BackgroundColor="{StaticResource Secondary}">
+
+                            <!--  Home Item  -->
+                            <FlexLayout AlignContent="Center" JustifyContent="SpaceBetween">
+                                <HorizontalStackLayout Margin="0,16,0,16" VerticalOptions="Center">
+                                    <Image
+                                        Margin="0,0,8,0"
+                                        HeightRequest="24"
+                                        Source="{Binding IconSource}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="NotoBold"
+                                        FontSize="{DynamicResource fs-body-secondary}"
+                                        Text="{Binding Title}"
+                                        VerticalOptions="End" />
+
+                                </HorizontalStackLayout>
+
+                                <Image Source="Icons/chevron.svg" VerticalOptions="Center" />
+                            </FlexLayout>
+
+                            <Line
+                                BackgroundColor="{StaticResource Primary}"
+                                FlexLayout.Grow="1"
+                                HeightRequest="1" />
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+
+                </DataTemplate>
+
+
+            </CollectionView.ItemTemplate>
+
+
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
