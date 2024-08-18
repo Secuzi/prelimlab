@@ -6,4 +6,8 @@ public partial class FlyoutMenuPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void clFlyout_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+    }
 }

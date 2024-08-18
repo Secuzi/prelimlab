@@ -4,10 +4,79 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Gallery">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid Margin="16,16,16,0" RowDefinitions=".1*, .1*, .4*, .2*">
+        <FlexLayout
+            Grid.Row="0"
+            AlignItems="Center"
+            JustifyContent="SpaceBetween">
+
+            <!--  QtPics Camera  -->
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label
+                    FontFamily="NotoBold"
+                    FontSize="{DynamicResource fs-h1}"
+                    Text="QTPics"
+                    TextColor="{StaticResource Primary}" />
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="35"
+                    Source="Icons/camera.png" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Image HeightRequest="18" Source="Icons/pin.png" />
+                <Label
+                    FontFamily="NotoBold"
+                    FontSize="{DynamicResource fs-h2}"
+                    Text="Gallery"
+                    TextColor="{StaticResource Primary}" />
+            </HorizontalStackLayout>
+
+
+
+        </FlexLayout>
+
+        <HorizontalStackLayout
+            Grid.Row="1"
+            Margin="0,23,0,0"
+            HorizontalOptions="Center">
+            <Label
+                FontAttributes="Bold"
+                FontFamily="Notobold"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="Gallery of Cuties"
+                TextColor="{StaticResource Primary}">
+
+                <Label.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity=".1"
+                        Radius="8"
+                        Offset="0,3" />
+                </Label.Shadow>
+
+            </Label>
+
+        </HorizontalStackLayout>
+
+        <CollectionView
+            x:Name="clCutiesView"
+            Grid.Row="2"
+            Grid.ColumnSpan="2">
+            <CollectionView.ItemTemplate>
+                <!--  Fix dis bug  -->
+                <DataTemplate>
+                    <Grid ColumnDefinitions=".5*, .5*">
+                        <Image HeightRequest="200" Source="{Binding Image.Source}" />
+
+                    </Grid>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+    </Grid>
 </ContentPage>
