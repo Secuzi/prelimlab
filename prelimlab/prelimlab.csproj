@@ -47,6 +47,31 @@
 	  <None Remove="Resources\Fonts\NotoSansThaana-Bold.ttf" />
 	  <None Remove="Resources\Fonts\NotoSansThaana-Regular.ttf" />
 	  <None Remove="Resources\Images\dog1.jpg" />
+	  <None Remove="Resources\Images\Icons\camera.png" />
+	  <None Remove="Resources\Images\Icons\chevron.svg" />
+	  <None Remove="Resources\Images\Icons\gallery.svg" />
+	  <None Remove="Resources\Images\Icons\gallery_fill.svg" />
+	  <None Remove="Resources\Images\Icons\heart.svg" />
+	  <None Remove="Resources\Images\Icons\heart_fill.svg" />
+	  <None Remove="Resources\Images\Icons\helper.svg" />
+	  <None Remove="Resources\Images\Icons\home_icon.svg" />
+	  <None Remove="Resources\Images\Icons\home_icon_fill.svg" />
+	  <None Remove="Resources\Images\Icons\house.png" />
+	  <None Remove="Resources\Images\Icons\pin.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Icons\camera.png" />
+	  <MauiImage Include="Resources\Images\Icons\chevron.svg" />
+	  <MauiImage Include="Resources\Images\Icons\gallery_fill.svg" />
+	  <MauiImage Include="Resources\Images\Icons\gallery.svg" />
+	  <MauiImage Include="Resources\Images\Icons\heart_fill.svg" />
+	  <MauiImage Include="Resources\Images\Icons\heart.svg" />
+	  <MauiImage Include="Resources\Images\Icons\helper.svg" />
+	  <MauiImage Include="Resources\Images\Icons\home_icon_fill.svg" />
+	  <MauiImage Include="Resources\Images\Icons\home_icon.svg" />
+	  <MauiImage Include="Resources\Images\Icons\house.png" />
+	  <MauiImage Include="Resources\Images\Icons\pin.png" />
 	</ItemGroup>
 
 	<ItemGroup>

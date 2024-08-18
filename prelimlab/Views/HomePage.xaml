@@ -16,7 +16,105 @@
         </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
-        <ContentPage />
+        <ContentPage BackgroundColor="{StaticResource Background}">
+
+            <Grid Margin="16,16,16,0" RowDefinitions=".1*, .8*, .3*, .2*">
+
+                <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                    <!--  QtPics Camera  -->
+                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label
+                            FontFamily="NotoBold"
+                            FontSize="{DynamicResource fs-h1}"
+                            Text="QTPics"
+                            TextColor="{StaticResource Primary}" />
+                        <Image
+                            Margin="10,0,0,0"
+                            HeightRequest="35"
+                            Source="Icons/camera.png" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image HeightRequest="18" Source="Icons/pin.png" />
+                        <Label
+                            FontFamily="NotoBold"
+                            FontSize="{DynamicResource fs-h2}"
+                            Text="Home"
+                            TextColor="{StaticResource Primary}" />
+                    </HorizontalStackLayout>
+
+                </FlexLayout>
+
+
+                <Border Grid.Row="1" Margin="0,30,0,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity=".1"
+                            Radius="8"
+                            Offset="0,3" />
+
+                    </Border.Shadow>
+                    <Grid>
+                        <Image x:Name="HomePageImg" />
+                        <BoxView Opacity="0.2" Color="{StaticResource Secondary}" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Grid.Row="2"
+                    Margin="0,-20,0,0"
+                    Padding="34,13,34,0"
+                    BackgroundColor="{StaticResource Background}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity=".1"
+                            Radius="8"
+                            Offset="0,3" />
+
+                    </Border.Shadow>
+                    <Grid>
+                        <Border>
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="Black"
+                                    Opacity=".1"
+                                    Radius="8"
+                                    Offset="0,3" />
+
+                            </Border.Shadow>
+                            <Label x:Name="lbltitle" TextColor="{StaticResource Primary}" />
+
+                        </Border>
+                        <HorizontalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontFamily="NotoBold"
+                                FontSize="{DynamicResource fs-body-secondary}"
+                                Text="Submitted by"
+                                TextColor="{StaticResource Text}" />
+                            <Label
+                                x:Name="lblUser"
+                                FontFamily="NotoRegular"
+                                FontSize="{DynamicResource fs-body}"
+                                TextColor="{StaticResource Primary}" />
+                        </HorizontalStackLayout>
+                        <Label x:Name="lblDescription" TextColor="{StaticResource Text}" />
+
+                    </Grid>
+
+                </Border>
+
+            </Grid>
+
+        </ContentPage>
 
 
     </FlyoutPage.Detail>
