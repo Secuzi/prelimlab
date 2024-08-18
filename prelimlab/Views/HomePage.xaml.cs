@@ -22,7 +22,7 @@ public partial class HomePage : FlyoutPage
 		HomePageImg.Source = cuties[0].Image.Source;
 		HomePageImg.Aspect = cuties[0].Image.Aspect;
 		lbltitle.Text = cuties[0].Title;
-		lblUser.Text = cuties[0].User;
+		lblUser.Text += $"{cuties[0].User}";
 		lblDescription.Text = cuties[0].Description;
 		
 
