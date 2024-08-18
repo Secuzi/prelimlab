@@ -5,22 +5,50 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="QTPics">
 
+
+
+
     <FlyoutPage.Flyout>
         <ContentPage Title="QTPics">
-            <VerticalStackLayout>
-                <Label
-                    HorizontalOptions="Center"
-                    Text="Welcome to .NET MAUI!"
-                    VerticalOptions="Center" />
-            </VerticalStackLayout>
+            <Grid RowDefinitions=".3*, .7*">
+                <FlexLayout
+                    AlignItems="Center"
+                    BackgroundColor="{StaticResource Primary}"
+                    JustifyContent="Center">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image
+                            HeightRequest="160"
+                            HorizontalOptions="Center"
+                            Source="Icons/camera.png" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="NotoBold"
+                            FontSize="28.38"
+                            HorizontalOptions="Center"
+                            Text="QTPics"
+                            TextColor="{StaticResource Background}" />
+                    </VerticalStackLayout>
+                </FlexLayout>
+
+
+
+            </Grid>
         </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
+        <!--
+            Todo: Make a style to reuse properties for fontsize, fontfamily, button tap, navigation sa ubos
+            Ipa same sa background color, change image source samot na sa mga interactable buttons/icons
+        -->
         <ContentPage BackgroundColor="{StaticResource Background}">
 
-            <Grid Margin="16,16,16,0" RowDefinitions=".1*, .8*, .3*, .2*">
+            <Grid Margin="16,16,16,0" RowDefinitions=".1*, .6*, .4*, .2*">
+                <!--  Header  -->
+                <FlexLayout
+                    Grid.Row="0"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween">
 
-                <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
                     <!--  QtPics Camera  -->
                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                         <Label
@@ -45,7 +73,7 @@
 
                 </FlexLayout>
 
-
+                <!--  Main Image  -->
                 <Border Grid.Row="1" Margin="0,30,0,0">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20" />
@@ -63,53 +91,118 @@
                         <BoxView Opacity="0.2" Color="{StaticResource Secondary}" />
                     </Grid>
                 </Border>
+                <!--  Information  -->
+                <FlexLayout Grid.Row="2">
+                    <Border
+                        Margin="0,-20,0,0"
+                        Padding="34,13,34,20"
+                        BackgroundColor="{StaticResource Background}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20" />
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="Black"
+                                Opacity=".1"
+                                Radius="8"
+                                Offset="0,3" />
 
-                <Border
-                    Grid.Row="2"
-                    Margin="0,-20,0,0"
-                    Padding="34,13,34,0"
-                    BackgroundColor="{StaticResource Background}">
+                        </Border.Shadow>
+                        <ScrollView
+                            BackgroundColor="Transparent"
+                            IsEnabled="False"
+                            VerticalScrollBarVisibility="Never">
+
+
+                            <VerticalStackLayout>
+                                <VerticalStackLayout Grid.Row="0">
+
+                                    <Label
+                                        x:Name="lbltitle"
+                                        Grid.Row="0"
+                                        FontAttributes="Bold"
+                                        FontFamily="NotoBold"
+                                        FontSize="{DynamicResource fs-h1}"
+                                        Text="Puppy Love"
+                                        TextColor="{StaticResource Primary}">
+                                        <Label.Shadow>
+                                            <Shadow
+                                                Brush="Black"
+                                                Opacity=".1"
+                                                Radius="8"
+                                                Offset="0,3" />
+
+                                        </Label.Shadow>
+                                    </Label>
+                                    <HorizontalStackLayout Margin="0,4,0,0">
+
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontFamily="NotoBold"
+                                            FontSize="{DynamicResource fs-body-secondary}"
+                                            Text="Submitted by"
+                                            TextColor="{StaticResource Text}" />
+                                        <Label
+                                            x:Name="lblUser"
+                                            Margin="3,0,0,0"
+                                            FontAttributes="Bold"
+                                            FontFamily="NotoBold"
+                                            FontSize="{DynamicResource fs-body-secondary}"
+                                            Text="@"
+                                            TextColor="{StaticResource Primary}" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <Label
+                                    x:Name="lblDescription"
+                                    Grid.Row="1"
+                                    Margin="0,20,0,0"
+                                    FontFamily="NotoRegular"
+                                    FontSize="{DynamicResource fs-body}"
+                                    LineBreakMode="WordWrap"
+                                    Text=""
+                                    TextColor="{StaticResource Text}">
+                                    <!--  MaxLines="4" ;Enables me to tap the label directly without the use of a button  -->
+                                    <Label.GestureRecognizers>
+                                        <!--  Put an event handler to basically make it word wrap then enable the scrollview  -->
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <FlexLayout Margin="0,40,0,0" JustifyContent="SpaceBetween">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="NotoBold"
+                                        FontSize="{DynamicResource fs-h2}"
+                                        Text="QT OF THE DAY"
+                                        TextColor="{StaticResource Primary}" />
+                                    <Image HeightRequest="30" Source="Icons/heart.svg" />
+                                </FlexLayout>
+
+
+                            </VerticalStackLayout>
+                        </ScrollView>
+                    </Border>
+                </FlexLayout>
+
+                <!--  Button  -->
+                <Border Grid.Row="3" MaximumHeightRequest="55">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20" />
                     </Border.StrokeShape>
                     <Border.Shadow>
                         <Shadow
                             Brush="Black"
-                            Opacity=".1"
+                            Opacity=".3"
                             Radius="8"
                             Offset="0,3" />
 
                     </Border.Shadow>
-                    <Grid>
-                        <Border>
-                            <Border.Shadow>
-                                <Shadow
-                                    Brush="Black"
-                                    Opacity=".1"
-                                    Radius="8"
-                                    Offset="0,3" />
-
-                            </Border.Shadow>
-                            <Label x:Name="lbltitle" TextColor="{StaticResource Primary}" />
-
-                        </Border>
-                        <HorizontalStackLayout>
-                            <Label
-                                FontAttributes="Bold"
-                                FontFamily="NotoBold"
-                                FontSize="{DynamicResource fs-body-secondary}"
-                                Text="Submitted by"
-                                TextColor="{StaticResource Text}" />
-                            <Label
-                                x:Name="lblUser"
-                                FontFamily="NotoRegular"
-                                FontSize="{DynamicResource fs-body}"
-                                TextColor="{StaticResource Primary}" />
-                        </HorizontalStackLayout>
-                        <Label x:Name="lblDescription" TextColor="{StaticResource Text}" />
-
-                    </Grid>
-
+                    <Button
+                        FontAttributes="Bold"
+                        FontFamily="NotoBold"
+                        FontSize="{DynamicResource fs-h1}"
+                        Text="See More"
+                        TextColor="{StaticResource Background}" />
                 </Border>
 
             </Grid>
