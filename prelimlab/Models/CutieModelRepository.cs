@@ -27,7 +27,7 @@ namespace prelimlab.Models
 				Title = "Cutie Patootie",
 				User = "anotherdog",
 				Description = "Meet Bella, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "regine.jpg")), Aspect = Aspect.AspectFill}
 			},
 			new()
 			{

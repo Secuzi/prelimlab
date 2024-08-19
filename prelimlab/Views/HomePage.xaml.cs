@@ -14,12 +14,29 @@ public partial class HomePage : FlyoutPage
 	private void ClFlyout_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
 
+		// Check if a valid selection is made
 		if (e.CurrentSelection.FirstOrDefault() is FlyOutItemPage item)
 		{
-			// Proceed with navigation
-			Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetPage)) { BarTextColor = new Color(255, 249, 230) };
-			flyout.clFlyout.SelectedItem = null; // Clear selection
-			IsPresented = false; // Close the flyout
+			try
+			{
+				// Create an instance of the target page
+				var targetPage = (Page)Activator.CreateInstance(item.TargetPage);
+
+				// Set the Detail property with a new NavigationPage
+				Detail = new NavigationPage(targetPage)
+				{
+					BarTextColor = new Color(255, 249, 230)
+				};
+
+				// Clear selection and close the flyout
+				flyout.clFlyout.SelectedItem = null;
+				IsPresented = false; // Close the flyout
+			}
+			catch (Exception ex)
+			{
+				// Handle any exceptions that occur during page creation
+				Console.WriteLine($"Error creating page: {ex.Message}");
+			}
 		}
 		else
 		{
@@ -31,15 +48,9 @@ public partial class HomePage : FlyoutPage
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
-		LoadCuties();
+	
 	}
 
-	void LoadCuties()
-	{
-		var cuties = new ObservableCollection<CutieModel>(CutieModelRepository.GetCuties());
-		
-		
-
-	}
+	
 
 }
