@@ -63,9 +63,10 @@
         <CollectionView
             x:Name="clCutiesView"
             Grid.Row="2"
+            SelectionChanged="clCutiesView_SelectionChanged"
             VerticalScrollBarVisibility="Default">
             <CollectionView.ItemTemplate>
-                <!--  Fix dis bug  -->
+
                 <DataTemplate>
                     <Border HeightRequest="181" WidthRequest="161">
                         <Border.StrokeShape>
