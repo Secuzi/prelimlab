@@ -27,6 +27,7 @@
             </CollectionView.ItemsSource>-->
             <CollectionView.ItemTemplate>
                 <DataTemplate>
+
                     <VerticalStackLayout Padding="8,0,8,0" BackgroundColor="{StaticResource Secondary}">
 
                         <!--  Home Item  -->

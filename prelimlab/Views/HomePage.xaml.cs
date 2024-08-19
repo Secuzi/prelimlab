@@ -23,10 +23,7 @@ public partial class HomePage : FlyoutPage
 				var targetPage = (Page)Activator.CreateInstance(item.TargetPage);
 
 				// Set the Detail property with a new NavigationPage
-				Detail = new NavigationPage(targetPage)
-				{
-					BarTextColor = new Color(255, 249, 230)
-				};
+				Detail = new NavigationPage(targetPage);
 
 				// Clear selection and close the flyout
 				flyout.clFlyout.SelectedItem = null;

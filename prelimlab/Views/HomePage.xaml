@@ -11,11 +11,12 @@
 
 
     <FlyoutPage.Flyout>
-        <local:FlyoutMenuPage x:Name="flyout" />
+
+        <local:FlyoutMenuPage x:Name="flyout" BackgroundColor="{StaticResource Background}" />
 
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarTextColor="{StaticResource Background}">
             <x:Arguments>
                 <views:QtOfTheDayPage />
             </x:Arguments>
