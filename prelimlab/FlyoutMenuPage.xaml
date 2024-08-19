@@ -27,40 +27,33 @@
             </CollectionView.ItemsSource>-->
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <VerticalStackLayout Padding="8,0,8,0" BackgroundColor="{StaticResource Secondary}">
 
-                        <VerticalStackLayout
-                            Grid.Row="1"
-                            Padding="8,0,8,0"
-                            BackgroundColor="{StaticResource Secondary}">
+                        <!--  Home Item  -->
+                        <FlexLayout AlignContent="Center" JustifyContent="SpaceBetween">
+                            <HorizontalStackLayout Margin="0,16,0,16" VerticalOptions="Center">
+                                <Image
+                                    Margin="0,0,8,0"
+                                    HeightRequest="24"
+                                    Source="{Binding IconSource}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="NotoBold"
+                                    FontSize="{DynamicResource fs-body-secondary}"
+                                    Text="{Binding Title}"
+                                    VerticalOptions="End" />
 
-                            <!--  Home Item  -->
-                            <FlexLayout AlignContent="Center" JustifyContent="SpaceBetween">
-                                <HorizontalStackLayout Margin="0,16,0,16" VerticalOptions="Center">
-                                    <Image
-                                        Margin="0,0,8,0"
-                                        HeightRequest="24"
-                                        Source="{Binding IconSource}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontFamily="NotoBold"
-                                        FontSize="{DynamicResource fs-body-secondary}"
-                                        Text="{Binding Title}"
-                                        VerticalOptions="End" />
+                            </HorizontalStackLayout>
 
-                                </HorizontalStackLayout>
+                            <Image Source="Icons/chevron.svg" VerticalOptions="Center" />
+                        </FlexLayout>
 
-                                <Image Source="Icons/chevron.svg" VerticalOptions="Center" />
-                            </FlexLayout>
-
-                            <Line
-                                BackgroundColor="{StaticResource Primary}"
-                                FlexLayout.Grow="1"
-                                HeightRequest="1" />
-                        </VerticalStackLayout>
-
-                    </Grid>
+                        <Line
+                            BackgroundColor="{StaticResource Primary}"
+                            FlexLayout.Grow="1"
+                            HeightRequest="1" />
+                    </VerticalStackLayout>
 
 
                 </DataTemplate>
