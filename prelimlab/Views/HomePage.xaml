@@ -11,20 +11,11 @@
 
 
     <FlyoutPage.Flyout>
-        <ContentPage Title="QTPics">
-            <Grid RowDefinitions=".3*, .7*">
+        <local:FlyoutMenuPage x:Name="flyout" />
 
-                <!--  Flyout Items  -->
-                <local:FlyoutMenuPage x:Name="flyout" />
-
-
-
-
-            </Grid>
-        </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
-        <NavigationPage BarTextColor="{StaticResource Background}">
+        <NavigationPage>
             <x:Arguments>
                 <views:QtOfTheDayPage />
             </x:Arguments>
