@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="prelimlab.Views.MyControls.ShowControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Background}">
+    <Grid Margin="16,16,16,0" RowDefinitions=".1*, .5*, .4*, .2*">
+        <!--  Header  -->
+        <FlexLayout
+            Grid.Row="0"
+            AlignItems="Center"
+            JustifyContent="SpaceBetween">
+
+            <!--  QtPics Camera  -->
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label
+                    FontFamily="NotoBold"
+                    FontSize="{DynamicResource fs-h1}"
+                    Text="QTPics"
+                    TextColor="{StaticResource Primary}" />
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="35"
+                    Source="Icons/camera.png" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Image HeightRequest="18" Source="Icons/pin.png" />
+                <Label
+                    FontFamily="NotoBold"
+                    FontSize="{DynamicResource fs-h2}"
+                    Text="Home"
+                    TextColor="{StaticResource Primary}" />
+            </HorizontalStackLayout>
+
+        </FlexLayout>
+
+        <!--  Main Image  -->
+        <Border Grid.Row="1" Margin="0,30,0,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+            <Border.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity=".1"
+                    Radius="8"
+                    Offset="0,3" />
+
+            </Border.Shadow>
+            <Grid>
+                <Image x:Name="HomePageImg" Aspect="AspectFill" />
+                <BoxView Opacity="0.2" Color="{StaticResource Secondary}" />
+            </Grid>
+        </Border>
+        <!--  Information  -->
+        <FlexLayout Grid.Row="2">
+            <Border
+                Margin="0,-20,0,0"
+                Padding="34,13,34,20"
+                BackgroundColor="{StaticResource Background}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity=".1"
+                        Radius="8"
+                        Offset="0,3" />
+
+                </Border.Shadow>
+                <ScrollView
+                    BackgroundColor="Transparent"
+                    IsEnabled="False"
+                    VerticalScrollBarVisibility="Never">
+
+
+                    <VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="0">
+
+                            <Label
+                                x:Name="lbltitle"
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontFamily="NotoBold"
+                                FontSize="{DynamicResource fs-h1}"
+                                Text="Puppy Love"
+                                TextColor="{StaticResource Primary}">
+                                <Label.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity=".1"
+                                        Radius="8"
+                                        Offset="0,3" />
+
+                                </Label.Shadow>
+                            </Label>
+                            <HorizontalStackLayout Margin="0,4,0,0">
+
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontFamily="NotoBold"
+                                    FontSize="{DynamicResource fs-body-secondary}"
+                                    Text="Submitted by"
+                                    TextColor="{StaticResource Text}" />
+                                <Label
+                                    x:Name="lblUser"
+                                    Margin="3,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontFamily="NotoBold"
+                                    FontSize="{DynamicResource fs-body-secondary}"
+                                    Text="@"
+                                    TextColor="{StaticResource Primary}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Label
+                            x:Name="lblDescription"
+                            Grid.Row="1"
+                            Margin="0,20,0,0"
+                            FontFamily="NotoRegular"
+                            FontSize="{DynamicResource fs-body}"
+                            LineBreakMode="WordWrap"
+                            Text=""
+                            TextColor="{StaticResource Text}">
+                            <!--  MaxLines="4" ;Enables me to tap the label directly without the use of a button  -->
+                            <Label.GestureRecognizers>
+                                <!--  Put an event handler to basically make it word wrap then enable the scrollview  -->
+                                <TapGestureRecognizer />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <FlexLayout Margin="0,40,0,0" JustifyContent="SpaceBetween">
+                            <Label
+                                x:Name="lblQtOfTheDay"
+                                FontAttributes="Bold"
+                                FontFamily="NotoBold"
+                                FontSize="{DynamicResource fs-h2}"
+                                Text=""
+                                TextColor="{StaticResource Primary}" />
+                            <Image HeightRequest="30" Source="Icons/heart.svg" />
+                        </FlexLayout>
+
+
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Border>
+        </FlexLayout>
+
+        <!--  Button  -->
+        <Border Grid.Row="3" MaximumHeightRequest="55">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+            <Border.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity=".3"
+                    Radius="8"
+                    Offset="0,3" />
+
+            </Border.Shadow>
+            <Button
+                x:Name="btnOnShow"
+                Clicked="btnOnShow_Clicked"
+                FontAttributes="Bold"
+                FontFamily="NotoBold"
+                FontSize="{DynamicResource fs-h1}"
+                Text="Go Back"
+                TextColor="{StaticResource Background}" />
+        </Border>
+
+    </Grid>
+
+</ContentView>

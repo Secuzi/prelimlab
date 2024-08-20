@@ -17,4 +17,15 @@ public partial class GalleryPage : ContentPage
 		clCutiesView.ItemsSource = cuties;
 
 	}
+
+	private void clCutiesView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		if (clCutiesView.SelectedItem != null)
+		{
+			var cutieModel = clCutiesView.SelectedItem as CutieModel;
+			clCutiesView.SelectedItem = null;
+			Navigation.PushAsync(new ShowPage(cutieModel, ""));
+			
+		}
+	}
 }

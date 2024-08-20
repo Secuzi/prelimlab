@@ -27,15 +27,15 @@ namespace prelimlab.Models
 				Title = "Cutie Patootie",
 				User = "anotherdog",
 				Description = "Meet Bella, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "hedgehog.jpg")), Aspect = Aspect.AspectFill}
 			},
 			new()
 			{
 				CutieId = 3,
 				Title = "Cutie Regie",
 				User = "anotherdog",
-				Description = "Meet Regie, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				Description = "Meet Regie, the fluffiest seal! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "babyseal.jpg")), Aspect = Aspect.AspectFill}
 			},
 			new()
 			{
@@ -43,7 +43,7 @@ namespace prelimlab.Models
 				Title = "Cutie Maemae",
 				User = "anotherdog",
 				Description = "Meet Maemae, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "catpic.jpg")), Aspect = Aspect.AspectFill}
 			},
 			new()
 			{
@@ -51,15 +51,15 @@ namespace prelimlab.Models
 				Title = "Cutie Maemae",
 				User = "anotherdog",
 				Description = "Meet Maemae, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "catpic1.jpg")), Aspect = Aspect.AspectFill}
 			},
 			new()
 			{
 				CutieId = 6,
 				Title = "Cutie Maemae",
-				User = "anotherdog",
-				Description = "Meet Maemae, the fluffiest puppy! Her playful spirit and wagging tail bring joy to everyone around her. Just look at those big, soulful eyes!",
-				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "dog1.jpg")), Aspect = Aspect.AspectFill}
+				User = "secuzi",
+				Description = "Meet Maemae, the cutest perzon! Her playful spirit bring joy to everyone around her. Just look at those big, soulful eyes!",
+				Image = new() { Source = ImageSource.FromFile(Path.Combine(filePath, "regine.jpg")), Aspect = Aspect.AspectFill}
 			},
 		};
 

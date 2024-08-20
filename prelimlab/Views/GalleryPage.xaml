@@ -3,8 +3,9 @@
     x:Class="prelimlab.Views.GalleryPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Gallery">
-    <Grid Margin="16,16,16,0" RowDefinitions=".1*, .1*, .6*, .1*">
+    Title="Gallery"
+    BackgroundColor="{StaticResource Background}">
+    <Grid Margin="16,16,16,0" RowDefinitions=".1*, .1*, .8*">
         <FlexLayout
             Grid.Row="0"
             AlignItems="Center"
@@ -38,7 +39,7 @@
 
         <HorizontalStackLayout
             Grid.Row="1"
-            Margin="0,5,0,0"
+            Margin="0,5,0,5"
             HorizontalOptions="Center">
             <Label
                 FontAttributes="Bold"
@@ -63,9 +64,12 @@
         <CollectionView
             x:Name="clCutiesView"
             Grid.Row="2"
+            Margin="0,16,0,0"
+            SelectionChanged="clCutiesView_SelectionChanged"
+            SelectionMode="Single"
             VerticalScrollBarVisibility="Default">
             <CollectionView.ItemTemplate>
-                <!--  Fix dis bug  -->
+
                 <DataTemplate>
                     <Border HeightRequest="181" WidthRequest="161">
                         <Border.StrokeShape>
@@ -79,12 +83,12 @@
                                 Offset="0,3" />
 
                         </Border.Shadow>
+
                         <Grid>
-
-
                             <Image Aspect="AspectFill" Source="{Binding Image.Source}" />
                             <BoxView Opacity="0.2" Color="{StaticResource Secondary}" />
                         </Grid>
+
                     </Border>
                 </DataTemplate>
 

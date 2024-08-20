@@ -11,17 +11,8 @@
 
 
     <FlyoutPage.Flyout>
-        <ContentPage Title="QTPics">
-            <Grid RowDefinitions=".3*, .7*">
+        <local:FlyoutMenuPage x:Name="flyout" BackgroundColor="{StaticResource Secondary}" /> 
 
-                <!--  Flyout Items  -->
-                <local:FlyoutMenuPage x:Name="flyout" />
-
-
-
-
-            </Grid>
-        </ContentPage>
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
         <NavigationPage BarTextColor="{StaticResource Background}">

@@ -11,7 +11,8 @@
             x:Name="clFlyout"
             x:FieldModifier="public"
             SelectionChanged="clFlyout_SelectionChanged"
-            SelectionMode="Single">
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:FlyOutItemPage}">
                     <model:FlyOutItemPage
@@ -25,6 +26,20 @@
 
                 </x:Array>
             </CollectionView.ItemsSource>
+            <CollectionView.Header>
+                <VerticalStackLayout Padding="0,47,0,36" BackgroundColor="{StaticResource Primary}">
+                    <Image HeightRequest="160" Source="Icons/camera.png" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="NotoBold"
+                        FontSize="28.38"
+                        HorizontalOptions="Center"
+                        Text="QtPics"
+                        TextColor="{StaticResource Background}" />
+                </VerticalStackLayout>
+            </CollectionView.Header>
+
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
